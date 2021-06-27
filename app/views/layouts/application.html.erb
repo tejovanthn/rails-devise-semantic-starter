@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Heritage</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="ui grid">
+      <nav class="computer only row">
+        <div class="column">
+          <div class="ui menu">
+            <div class="ui container">
+              <%= render "layouts/navigation" %>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="tablet mobile only row">
+        <div class="column">
+          <div class="ui menu">
+            <a id="mobile_item" class="item"><i class="bars icon"></i></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="ui pushable segment">
+      <div class="ui sidebar vertical menu">
+        <%= render "layouts/navigation" %>
+      </div>
+      <div class="pusher">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+
+</html>
